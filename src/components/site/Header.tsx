@@ -37,23 +37,23 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
-        scrolled
-          ? "border-border/80 bg-background/95 backdrop-blur-md"
-          : "border-transparent bg-background/80 backdrop-blur-sm"
+      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-royal transition-all duration-500 ${
+        scrolled ? "shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)]" : ""
       }`}
     >
       <div
         className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 transition-all duration-500 sm:px-8 ${
-          scrolled ? "py-3" : "py-5"
+          scrolled ? "py-2" : "py-3"
         }`}
       >
         <a href="#home" className="flex min-w-0 items-center" aria-label="AD Nexus Gateway home">
-          <img
-            src={logo.url}
-            alt="AD Nexus Gateway FZ-LLC"
-            className={`w-auto transition-all duration-500 ${scrolled ? "h-9" : "h-12"}`}
-          />
+          <span className="inline-flex bg-white px-3 py-1.5">
+            <img
+              src={logo.url}
+              alt="AD Nexus Gateway FZ-LLC"
+              className={`w-auto transition-all duration-500 ${scrolled ? "h-8" : "h-10"}`}
+            />
+          </span>
         </a>
 
         <nav className="hidden items-center gap-8 xl:flex">
@@ -62,16 +62,16 @@ export function Header() {
               <div key={item.href} className="group relative">
                 <a
                   href={item.href}
-                  className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-primary/80 transition-colors hover:text-primary"
+                  className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-white transition-colors hover:text-gold"
                 >
                   {item.label}
                 </a>
-                <div className="invisible absolute left-1/2 top-full z-10 w-64 -translate-x-1/2 translate-y-2 border border-border bg-background p-2 opacity-0 shadow-[0_20px_60px_-30px_rgba(16,24,48,0.5)] transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full z-10 w-64 -translate-x-1/2 translate-y-2 border border-white/10 bg-navy-deep p-2 opacity-0 shadow-[0_20px_60px_-30px_rgba(16,24,48,0.5)] transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   {SERVICES.map((s) => (
                     <a
                       key={s.href}
                       href={s.href}
-                      className="block px-4 py-3 text-[0.8rem] text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+                      className="block px-4 py-3 text-[0.8rem] text-white/75 transition-colors hover:bg-white/5 hover:text-gold"
                     >
                       {s.label}
                     </a>
@@ -82,7 +82,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-primary/80 transition-colors hover:text-primary"
+                className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-white transition-colors hover:text-gold"
               >
                 {item.label}
               </a>
@@ -90,7 +90,7 @@ export function Header() {
           )}
           <a
             href="#contact"
-            className="border border-primary bg-primary px-6 py-3 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy-deep"
+            className="border border-gold bg-gold px-6 py-3 text-[0.7rem] uppercase tracking-[0.2em] text-navy-deep transition-colors duration-300 hover:bg-gold-soft hover:border-gold-soft"
           >
             Let's Connect
           </a>
@@ -101,20 +101,20 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] border border-border xl:hidden"
+          className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] border border-white/25 xl:hidden"
         >
           <span
-            className={`h-px w-5 bg-primary transition-transform duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`}
+            className={`h-px w-5 bg-white transition-transform duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`}
           />
-          <span className={`h-px w-5 bg-primary transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`h-px w-5 bg-white transition-opacity ${open ? "opacity-0" : ""}`} />
           <span
-            className={`h-px w-5 bg-primary transition-transform duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
+            className={`h-px w-5 bg-white transition-transform duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       <div
-        className={`overflow-hidden border-t border-border bg-background transition-[max-height] duration-500 xl:hidden ${
+        className={`overflow-hidden border-t border-white/10 bg-royal transition-[max-height] duration-500 xl:hidden ${
           open ? "max-h-[80vh]" : "max-h-0"
         }`}
       >
@@ -124,19 +124,19 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="border-b border-border/60 py-4 text-[0.78rem] uppercase tracking-[0.2em] text-primary"
+              className="border-b border-white/12 py-4 text-[0.78rem] uppercase tracking-[0.2em] text-white"
             >
               {item.label}
             </a>
           ))}
           <div className="py-4">
-            <p className="eyebrow">Services</p>
+            <p className="eyebrow text-gold">Services</p>
             {SERVICES.map((s) => (
               <a
                 key={s.href}
                 href={s.href}
                 onClick={() => setOpen(false)}
-                className="mt-3 block text-sm text-muted-foreground"
+                className="mt-3 block text-sm text-white/70"
               >
                 {s.label}
               </a>
@@ -145,7 +145,7 @@ export function Header() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mb-4 bg-primary px-6 py-4 text-center text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground"
+            className="mb-4 bg-gold px-6 py-4 text-center text-[0.7rem] uppercase tracking-[0.2em] text-navy-deep"
           >
             Let's Connect
           </a>
