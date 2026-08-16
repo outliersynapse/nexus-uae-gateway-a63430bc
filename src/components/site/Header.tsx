@@ -124,19 +124,19 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="border-b border-border/60 py-4 text-[0.78rem] uppercase tracking-[0.2em] text-primary"
+              className="border-b border-white/12 py-4 text-[0.78rem] uppercase tracking-[0.2em] text-white"
             >
               {item.label}
             </a>
           ))}
           <div className="py-4">
-            <p className="eyebrow">Services</p>
+            <p className="eyebrow text-gold">Services</p>
             {SERVICES.map((s) => (
               <a
                 key={s.href}
                 href={s.href}
                 onClick={() => setOpen(false)}
-                className="mt-3 block text-sm text-muted-foreground"
+                className="mt-3 block text-sm text-white/70"
               >
                 {s.label}
               </a>
@@ -145,7 +145,7 @@ export function Header() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mb-4 bg-primary px-6 py-4 text-center text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground"
+            className="mb-4 bg-gold px-6 py-4 text-center text-[0.7rem] uppercase tracking-[0.2em] text-navy-deep"
           >
             Let's Connect
           </a>
