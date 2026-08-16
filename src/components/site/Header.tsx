@@ -37,23 +37,21 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-royal transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy-deep transition-all duration-500 ${
         scrolled ? "shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)]" : ""
       }`}
     >
       <div
         className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 transition-all duration-500 sm:px-8 ${
-          scrolled ? "py-2" : "py-3"
+          scrolled ? "py-2.5" : "py-3.5"
         }`}
       >
         <a href="#home" className="flex min-w-0 items-center" aria-label="AD Nexus Gateway home">
-          <span className="inline-flex bg-white px-3 py-1.5">
-            <img
-              src={logo.url}
-              alt="AD Nexus Gateway FZ-LLC"
-              className={`w-auto transition-all duration-500 ${scrolled ? "h-8" : "h-10"}`}
-            />
-          </span>
+          <img
+            src={logo.url}
+            alt="AD Nexus Gateway FZ-LLC"
+            className={`w-auto transition-all duration-500 ${scrolled ? "h-7" : "h-8"}`}
+          />
         </a>
 
         <nav className="hidden items-center gap-8 xl:flex">
