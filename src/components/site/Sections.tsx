@@ -807,9 +807,11 @@ export function Market() {
             <Reveal
               key={m}
               delay={i * 70}
-              className="bg-background px-8 py-6 text-center font-serif text-lg text-primary"
+              className="bg-background px-8 py-6 text-center"
             >
-              {m}
+              <span className="market-location font-serif text-lg text-primary">
+                {m}
+              </span>
             </Reveal>
           ))}
         </div>
