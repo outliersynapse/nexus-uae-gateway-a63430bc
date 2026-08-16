@@ -5,7 +5,6 @@ import tradingImg from "@/assets/trading.jpg";
 import marketingImg from "@/assets/marketing.jpg";
 import connectImg from "@/assets/connect.jpg";
 import founderAsset from "@/assets/founder-anil-datla.jpg.asset.json";
-import logo from "@/assets/ad-nexus-logo-transparent.png.asset.json";
 
 /* ------------------------------------------------------------------ Hero */
 
