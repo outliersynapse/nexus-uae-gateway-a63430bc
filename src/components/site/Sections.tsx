@@ -794,27 +794,28 @@ const MARKETS = [
 
 export function Market() {
   return (
-    <section className="border-t border-border bg-background py-20 lg:py-28">
+    <section className="bg-navy-deep py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           align="center"
+          invert
           eyebrow="Our Market"
           title="Based in the UAE. Connected to Opportunities."
           intro={<p>Ras Al Khaimah, United Arab Emirates</p>}
         />
-        <div className="mt-14 flex flex-wrap justify-center gap-px bg-border">
-          {MARKETS.map((m, i) => (
-            <Reveal
-              key={m}
-              delay={i * 70}
-              className="bg-background px-8 py-6 text-center"
-            >
-              <span className="market-location font-serif text-lg text-primary">
-                {m}
-              </span>
-            </Reveal>
-          ))}
-        </div>
+      </div>
+      <div className="mt-14 flex flex-wrap justify-center gap-x-px gap-y-0 bg-white/15">
+        {MARKETS.map((m, i) => (
+          <Reveal
+            key={m}
+            delay={i * 70}
+            className="flex min-w-[10rem] flex-1 items-center justify-center bg-navy-deep px-4 py-5 text-center sm:px-6 sm:py-6"
+          >
+            <span className="market-location font-sans text-[0.7rem] uppercase tracking-[0.2em] text-white/80">
+              {m}
+            </span>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
