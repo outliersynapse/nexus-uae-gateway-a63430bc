@@ -43,15 +43,17 @@ export function Header() {
     >
       <div
         className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 transition-all duration-500 sm:px-8 ${
-          scrolled ? "py-3" : "py-5"
+          scrolled ? "py-2" : "py-3"
         }`}
       >
         <a href="#home" className="flex min-w-0 items-center" aria-label="AD Nexus Gateway home">
-          <img
-            src={logo.url}
-            alt="AD Nexus Gateway FZ-LLC"
-            className={`w-auto transition-all duration-500 ${scrolled ? "h-9" : "h-12"}`}
-          />
+          <span className="inline-flex bg-white px-3 py-1.5">
+            <img
+              src={logo.url}
+              alt="AD Nexus Gateway FZ-LLC"
+              className={`w-auto transition-all duration-500 ${scrolled ? "h-8" : "h-10"}`}
+            />
+          </span>
         </a>
 
         <nav className="hidden items-center gap-8 xl:flex">
