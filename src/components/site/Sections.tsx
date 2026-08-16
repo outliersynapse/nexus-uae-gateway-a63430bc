@@ -4,8 +4,8 @@ import realEstateImg from "@/assets/real-estate.jpg";
 import tradingImg from "@/assets/trading.jpg";
 import marketingImg from "@/assets/marketing.jpg";
 import connectImg from "@/assets/connect.jpg";
-import founderImg from "@/assets/founder.jpg";
-import logo from "@/assets/ad-nexus-logo.png.asset.json";
+import founderAsset from "@/assets/founder-anil-datla.jpg.asset.json";
+import logo from "@/assets/ad-nexus-logo-transparent.png.asset.json";
 
 /* ------------------------------------------------------------------ Hero */
 
@@ -735,7 +735,7 @@ export function Founder() {
       <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <Reveal className="overflow-hidden">
           <img
-            src={founderImg}
+            src={founderAsset.url}
             alt="Anil Datla, Founder & Managing Director"
             loading="lazy"
             width={900}

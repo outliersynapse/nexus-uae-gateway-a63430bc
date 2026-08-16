@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/ad-nexus-logo.png.asset.json";
+import logo from "@/assets/ad-nexus-logo-transparent.png.asset.json";
 
 const NAV = [
   { label: "Home", href: "#home" },
