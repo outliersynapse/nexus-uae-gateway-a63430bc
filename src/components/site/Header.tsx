@@ -62,16 +62,16 @@ export function Header() {
               <div key={item.href} className="group relative">
                 <a
                   href={item.href}
-                  className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-primary/80 transition-colors hover:text-primary"
+                  className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-white transition-colors hover:text-gold"
                 >
                   {item.label}
                 </a>
-                <div className="invisible absolute left-1/2 top-full z-10 w-64 -translate-x-1/2 translate-y-2 border border-border bg-background p-2 opacity-0 shadow-[0_20px_60px_-30px_rgba(16,24,48,0.5)] transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full z-10 w-64 -translate-x-1/2 translate-y-2 border border-white/10 bg-navy-deep p-2 opacity-0 shadow-[0_20px_60px_-30px_rgba(16,24,48,0.5)] transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   {SERVICES.map((s) => (
                     <a
                       key={s.href}
                       href={s.href}
-                      className="block px-4 py-3 text-[0.8rem] text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+                      className="block px-4 py-3 text-[0.8rem] text-white/75 transition-colors hover:bg-white/5 hover:text-gold"
                     >
                       {s.label}
                     </a>
@@ -82,7 +82,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-primary/80 transition-colors hover:text-primary"
+                className="link-underline text-[0.72rem] uppercase tracking-[0.18em] text-white transition-colors hover:text-gold"
               >
                 {item.label}
               </a>
@@ -90,7 +90,7 @@ export function Header() {
           )}
           <a
             href="#contact"
-            className="border border-primary bg-primary px-6 py-3 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy-deep"
+            className="border border-gold bg-gold px-6 py-3 text-[0.7rem] uppercase tracking-[0.2em] text-navy-deep transition-colors duration-300 hover:bg-gold-soft hover:border-gold-soft"
           >
             Let's Connect
           </a>
