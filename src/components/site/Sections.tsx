@@ -20,19 +20,10 @@ export function Hero() {
         className="absolute inset-0 h-full w-full object-cover opacity-45"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/35" />
-      <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-36 sm:px-8 sm:pb-28 sm:pt-44 lg:pb-32 lg:pt-52">
+      <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:pb-32 lg:pt-32">
         <div className="max-w-3xl">
-          <Reveal>
-            <div className="inline-flex bg-white px-4 py-2.5">
-              <img
-                src={logo.url}
-                alt="AD Nexus Gateway FZ-LLC logo"
-                className="h-10 w-auto sm:h-12"
-              />
-            </div>
-          </Reveal>
           <Reveal delay={120}>
-            <p className="eyebrow mt-8 text-gold">
+            <p className="eyebrow text-gold">
               Ras Al Khaimah · United Arab Emirates
             </p>
             <h1 className="mt-5 text-[2rem] leading-[1.12] text-white sm:text-[2.75rem] lg:text-[3.4rem]">
