@@ -101,20 +101,20 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] border border-border xl:hidden"
+          className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] border border-white/25 xl:hidden"
         >
           <span
-            className={`h-px w-5 bg-primary transition-transform duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`}
+            className={`h-px w-5 bg-white transition-transform duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`}
           />
-          <span className={`h-px w-5 bg-primary transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`h-px w-5 bg-white transition-opacity ${open ? "opacity-0" : ""}`} />
           <span
-            className={`h-px w-5 bg-primary transition-transform duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
+            className={`h-px w-5 bg-white transition-transform duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       <div
-        className={`overflow-hidden border-t border-border bg-background transition-[max-height] duration-500 xl:hidden ${
+        className={`overflow-hidden border-t border-white/10 bg-royal transition-[max-height] duration-500 xl:hidden ${
           open ? "max-h-[80vh]" : "max-h-0"
         }`}
       >
