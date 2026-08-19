@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
           email: "anil@adnexusgateway.com",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Compass Building, Al Shohada Road, Al Hamra Industrial Zone – FZ",
+            streetAddress: "RAKEZ Business Zone, Al Nakheel Area, P.O Box No.10055",
             addressLocality: "Ras Al Khaimah",
             addressCountry: "AE",
           },
