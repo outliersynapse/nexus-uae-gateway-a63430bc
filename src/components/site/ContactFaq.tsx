@@ -44,7 +44,7 @@ export function Contact() {
             intro={
               <p>
                 Whether you are looking for a property, exploring a trading
-                opportunity, seeking digital marketing support, or looking for a
+                opportunity, seeking social media marketing support, or looking for a
                 strategic business partnership, we'd like to hear from you.
               </p>
             }
@@ -59,15 +59,13 @@ export function Contact() {
             <div>
               <p className="eyebrow">Address</p>
               <address className="mt-3 not-italic leading-relaxed text-muted-foreground">
-                Compass Building
+                Ras Al Khaimah Economic Zone (RAKEZ)
                 <br />
-                Al Shohada Road
+                RAKEZ Business Zone
                 <br />
-                Al Hamra Industrial Zone – FZ
+                Al Nakheel Area
                 <br />
-                Ras Al Khaimah
-                <br />
-                United Arab Emirates
+                P.O Box No.10055, Ras Al Khaimah, UAE (United Arab Emirates)
               </address>
             </div>
             <div>
@@ -159,7 +157,7 @@ const FAQS = [
   },
   {
     q: "Where is AD Nexus Gateway located?",
-    a: "Our registered office is at Compass Building, Al Shohada Road, Al Hamra Industrial Zone – FZ, Ras Al Khaimah, United Arab Emirates.",
+    a: "Our registered office is at Ras Al Khaimah Economic Zone (RAKEZ), RAKEZ Business Zone, Al Nakheel Area, P.O Box No.10055, Ras Al Khaimah, UAE (United Arab Emirates).",
   },
   {
     q: "What real estate services do you provide?",

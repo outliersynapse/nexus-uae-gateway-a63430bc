@@ -23,7 +23,7 @@ export function Hero() {
         <div className="max-w-3xl">
           <Reveal delay={120}>
             <p className="eyebrow text-gold">
-              Ras Al Khaimah · United Arab Emirates
+              United Arab Emirates
             </p>
             <h1 className="mt-5 text-[2rem] leading-[1.12] text-white sm:text-[2.75rem] lg:text-[3.4rem]">
               Your Gateway to Opportunities Across the UAE and Beyond
@@ -37,7 +37,7 @@ export function Hero() {
               and growth solutions.
             </p>
             <p className="mt-6 font-serif text-xl text-gold-soft sm:text-2xl">
-              Real Estate. Trading. Digital Growth.
+              Real Estate. Trading. Social Media Marketing.
               <br />
               One Powerful Gateway.
             </p>
@@ -106,7 +106,7 @@ const VERTICALS = [
     num: "03",
     title: "Social Media Marketing",
     image: marketingImg,
-    body: "Helping businesses build visibility, engage audiences, generate leads, and grow their digital presence.",
+    body: "Helping businesses build visibility, engage audiences, generate leads, and grow their social media presence.",
     items: [
       "Social media strategy",
       "Social media management",
@@ -115,11 +115,11 @@ const VERTICALS = [
       "Video and Reels marketing",
       "Lead generation campaigns",
       "Meta advertising",
-      "Digital brand positioning",
+      "Marketing brand positioning",
       "Campaign management",
       "Performance-focused marketing",
     ],
-    cta: { label: "Explore Digital Marketing", href: "#marketing" },
+    cta: { label: "Explore Social Media Marketing", href: "#marketing" },
   },
 ];
 
@@ -201,7 +201,7 @@ export function About() {
                 <p>
                   AD Nexus Gateway FZ-LLC is a UAE-based business established in Ras
                   Al Khaimah, United Arab Emirates, with a vision to connect
-                  opportunities across real estate, trading, and digital business.
+                  opportunities across real estate, trading, and social media marketing.
                 </p>
                 <p>
                   We believe modern businesses need more than individual services.
@@ -231,7 +231,7 @@ export function About() {
             },
             {
               t: "Mission",
-              d: "To deliver connected, professional and transparent business solutions across real estate, trading and digital growth — built on relationships rather than transactions.",
+              d: "To deliver connected, professional and transparent business solutions across real estate, trading and social media growth — built on relationships rather than transactions.",
             },
           ].map((b, i) => (
             <Reveal key={b.t} delay={i * 120} className="bg-background p-8 lg:p-10">
@@ -494,7 +494,7 @@ export function Marketing() {
       }
       paragraphs={
         <p>
-          Performance-focused digital marketing that positions your brand clearly,
+          Performance-focused social media marketing that positions your brand clearly,
           reaches the right audience and converts attention into qualified business
           opportunities.
         </p>
@@ -507,7 +507,7 @@ export function Marketing() {
         "Video & Reels",
         "Lead Generation",
         "Meta Advertising",
-        "Digital Brand Positioning",
+        "Marketing Brand Positioning",
         "Campaign Management",
       ]}
       image={marketingImg}
@@ -544,7 +544,7 @@ const CLIENTS = [
   "Distributors",
   "Retail Businesses",
   "Professional Service Providers",
-  "Brands Seeking Digital Growth",
+  "Brands Seeking Social Media Growth",
 ];
 
 export function WhoWeServe() {
@@ -604,7 +604,7 @@ export function Connect() {
             "Real Estate",
             "Business Connections",
             "General Trading",
-            "Digital Marketing",
+            "Social Media Marketing",
             "Investment Opportunities",
           ].map((f, i) => (
             <Reveal key={f} delay={i * 90} className="bg-navy-deep p-8">
@@ -636,7 +636,6 @@ const PARTNERS = [
   "Manufacturers",
   "Suppliers",
   "Distributors",
-  "Digital Agencies",
   "Entrepreneurs",
   "Business Consultants",
   "Strategic Partners",
@@ -687,7 +686,7 @@ export function Partnerships() {
 
 const STEPS = [
   { n: "01", t: "Understand", d: "We understand your requirement, objective, budget, and expectations." },
-  { n: "02", t: "Research", d: "We evaluate relevant opportunities, markets, products, properties, or digital strategies." },
+  { n: "02", t: "Research", d: "We evaluate relevant opportunities, markets, products, properties, or social media strategies." },
   { n: "03", t: "Connect", d: "We connect you with suitable businesses, properties, suppliers, buyers, sellers, or solutions." },
   { n: "04", t: "Execute", d: "We coordinate the next steps professionally and efficiently." },
   { n: "05", t: "Grow", d: "We focus on long-term relationships and sustainable business opportunities." },
@@ -743,12 +742,12 @@ export function Founder() {
                 <p>
                   Anil Datla is an entrepreneur and business professional with
                   experience across real estate, client relationships, business
-                  development, strategic partnerships, and digital business.
+                  development, strategic partnerships, and social media marketing.
                 </p>
                 <p>
                   As the founder of AD Nexus Gateway FZ-LLC, he is focused on
                   building a diversified UAE-based business platform connecting real
-                  estate opportunities, trading relationships, and digital growth
+                  estate opportunities, trading relationships, and social media growth
                   solutions.
                 </p>
                 <p>
