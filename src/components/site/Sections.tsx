@@ -38,11 +38,11 @@ export function Hero() {
           width={1600}
           height={1104}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-in-out ${
-            i === slide ? "opacity-45" : "opacity-0"
+            i === slide ? "opacity-100" : "opacity-0"
           }`}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/80 via-navy-deep/45 to-navy-deep/20" />
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:pb-32 lg:pt-32">
         <div className="max-w-3xl">
           <Reveal delay={120}>
