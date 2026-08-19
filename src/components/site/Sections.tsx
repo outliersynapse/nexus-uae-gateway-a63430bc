@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { Reveal, SectionHeading } from "./Reveal";
 import heroImg from "@/assets/hero-uae.jpg";
+import heroImg2 from "@/assets/hero-uae-2.jpg";
+import heroImg3 from "@/assets/hero-uae-3.jpg";
 import realEstateImg from "@/assets/real-estate.jpg";
 import tradingImg from "@/assets/trading.jpg";
 import marketingImg from "@/assets/marketing.jpg";
