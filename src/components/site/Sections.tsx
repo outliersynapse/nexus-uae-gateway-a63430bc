@@ -8,16 +8,37 @@ import founderAsset from "@/assets/founder-anil-datla.jpg.asset.json";
 
 /* ------------------------------------------------------------------ Hero */
 
+const HERO_SLIDES = [
+  { src: heroImg, alt: "Premium UAE skyline at blue hour" },
+  { src: heroImg2, alt: "Luxury Dubai residential towers at blue hour" },
+  { src: heroImg3, alt: "Dubai waterfront luxury property skyline at dusk" },
+];
+
 export function Hero() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(
+      () => setSlide((s) => (s + 1) % HERO_SLIDES.length),
+      5000,
+    );
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <section id="home" className="relative overflow-hidden bg-navy-deep">
-      <img
-        src={heroImg}
-        alt="Premium UAE skyline at blue hour"
-        width={1600}
-        height={1104}
-        className="absolute inset-0 h-full w-full object-cover opacity-45"
-      />
+      {HERO_SLIDES.map((s, i) => (
+        <img
+          key={s.src}
+          src={s.src}
+          alt={s.alt}
+          width={1600}
+          height={1104}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-in-out ${
+            i === slide ? "opacity-45" : "opacity-0"
+          }`}
+        />
+      ))}
       <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/35" />
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:pb-32 lg:pt-32">
         <div className="max-w-3xl">
