@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://nexus-uae-gateway.lovable.app/sitemap.xml
+
