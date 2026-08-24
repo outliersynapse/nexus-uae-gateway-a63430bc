@@ -15,14 +15,15 @@ import {
   RealEstate,
   Trading,
   Verticals,
+  VerticalsSecondary,
   WhoWeServe,
   Why,
 } from "@/components/site/Sections";
 
 const TITLE =
-  "AD Nexus Gateway FZ-LLC | Real Estate, Trading & Digital Marketing UAE";
+  "AD Nexus Gateway | Real Estate, Trading & Digital Marketing UAE";
 const DESCRIPTION =
-  "AD Nexus Gateway FZ-LLC is a UAE-based company in Ras Al Khaimah offering real estate consultancy, general trading and social media marketing solutions across the UAE, India and international markets.";
+  "AD Nexus Gateway is a UAE-based company in Ras Al Khaimah offering real estate consultancy, general trading and social media marketing solutions across the UAE, India and international markets.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "AD Nexus Gateway, AD Nexus Gateway FZ-LLC, Real Estate Consultancy UAE, Real Estate Consultant Ras Al Khaimah, UAE Property Consultancy, Dubai Real Estate Consultancy, UAE General Trading, General Trading Company UAE, Social Media Marketing UAE, Digital Marketing UAE, UAE India Business Gateway, Property Investment UAE, UAE Business Consultancy",
+          "AD Nexus Gateway, AD Nexus Gateway, Real Estate Consultancy UAE, Real Estate Consultant Ras Al Khaimah, UAE Property Consultancy, Dubai Real Estate Consultancy, UAE General Trading, General Trading Company UAE, Social Media Marketing UAE, Digital Marketing UAE, UAE India Business Gateway, Property Investment UAE, UAE Business Consultancy",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -48,7 +49,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "AD Nexus Gateway FZ-LLC",
+          name: "AD Nexus Gateway",
           slogan: "Connecting Opportunities. Creating Growth.",
           url: "https://www.adnexusgateway.com",
           email: "anil@adnexusgateway.com",
@@ -71,6 +72,7 @@ function Index() {
       <main className="pb-14 md:pb-0">
         <Hero />
         <Verticals />
+        <VerticalsSecondary />
         <About />
         <Why />
         <Connect />

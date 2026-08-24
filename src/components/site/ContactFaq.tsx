@@ -152,8 +152,8 @@ export function Contact() {
 
 const FAQS = [
   {
-    q: "What is AD Nexus Gateway FZ-LLC?",
-    a: "AD Nexus Gateway FZ-LLC is a UAE-based company established in Ras Al Khaimah, operating across three business verticals: real estate consultancy, general trading and social media marketing.",
+    q: "What is AD Nexus Gateway?",
+    a: "AD Nexus Gateway is a UAE-based company established in Ras Al Khaimah, operating across three business verticals: real estate consultancy, general trading and social media marketing.",
   },
   {
     q: "Where is AD Nexus Gateway located?",

@@ -4,6 +4,9 @@ import heroImg from "@/assets/hero-uae.jpg";
 import heroImg2 from "@/assets/hero-uae-2.jpg";
 import heroImg3 from "@/assets/hero-uae-3.jpg";
 import realEstateImg from "@/assets/real-estate.jpg";
+import dubaiRe1 from "@/assets/dubai-real-estate-1.jpg";
+import dubaiRe2 from "@/assets/dubai-real-estate-2.jpg";
+import dubaiRe3 from "@/assets/dubai-real-estate-3.jpg";
 import tradingImg from "@/assets/trading.jpg";
 import marketingImg from "@/assets/marketing.jpg";
 import connectImg from "@/assets/connect.jpg";
@@ -56,7 +59,7 @@ export function Hero() {
           <Reveal delay={220}>
             <span className="gold-rule mt-8" />
             <p className="mt-7 max-w-2xl text-[0.975rem] leading-relaxed text-white/70">
-              At AD Nexus Gateway FZ-LLC, we connect businesses, investors, property
+              At AD Nexus Gateway, we connect businesses, investors, property
               buyers and sellers, and brands with the right opportunities, markets,
               and growth solutions.
             </p>
@@ -164,7 +167,7 @@ export function Verticals() {
     return () => window.clearInterval(id);
   }, []);
 
-  const v = VERTICALS[0];
+  const v = VERTICALS[0]!;
 
   return (
     <section id="services" className="bg-background py-20 lg:py-28">
@@ -305,7 +308,7 @@ export function About() {
             intro={
               <>
                 <p>
-                  AD Nexus Gateway FZ-LLC is a UAE-based business established in Ras
+                  AD Nexus Gateway is a UAE-based business established in Ras
                   Al Khaimah, United Arab Emirates, with a vision to connect
                   opportunities across real estate, trading, and social media marketing.
                 </p>
@@ -514,8 +517,8 @@ export function RealEstate() {
         "Off-Plan Properties",
         "Buyer & Seller Support",
       ]}
-      image={realEstateImg}
-      imageAlt="Modern UAE residential tower and villa architecture"
+      image={dubaiRe1}
+      imageAlt="Luxury Dubai waterfront real estate at golden hour"
       cta="Speak to a Property Consultant"
       extra={
         <div className="mt-20 grid gap-px border border-border bg-border md:grid-cols-2">
@@ -851,7 +854,7 @@ export function Founder() {
                   development, strategic partnerships, and social media marketing.
                 </p>
                 <p>
-                  As the founder of AD Nexus Gateway FZ-LLC, he is focused on
+                  As the founder of AD Nexus Gateway, he is focused on
                   building a diversified UAE-based business platform connecting real
                   estate opportunities, trading relationships, and social media growth
                   solutions.
