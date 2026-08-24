@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/ad-nexus-logo.png.asset.json";
+import logo from "@/assets/ad-nexus-logo.png";
 
 const NAV = [
   { label: "Home", href: "#home" },
@@ -48,7 +48,7 @@ export function Header() {
       >
         <a href="#home" className="flex min-w-0 items-center" aria-label="AD Nexus Gateway home">
           <img
-            src={logo.url}
+            src={logo}
             alt="AD Nexus Gateway"
             className={`w-auto transition-all duration-500 ${scrolled ? "h-7" : "h-8"}`}
           />

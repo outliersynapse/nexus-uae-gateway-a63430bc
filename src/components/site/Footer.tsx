@@ -1,4 +1,4 @@
-import logo from "@/assets/ad-nexus-logo.png.asset.json";
+import logo from "@/assets/ad-nexus-logo.png";
 
 const QUICK = [
   { label: "Home", href: "#home" },
@@ -25,7 +25,7 @@ export function Footer() {
           <div className="max-w-md">
             <div className="inline-flex bg-white px-5 py-3">
               <img
-                src={logo.url}
+                src={logo}
                 alt="AD Nexus Gateway"
                 className="h-11 w-auto"
                 loading="lazy"
