@@ -10,7 +10,7 @@ import dubaiRe3 from "@/assets/dubai-real-estate-3.jpg";
 import tradingImg from "@/assets/trading.jpg";
 import marketingImg from "@/assets/marketing.jpg";
 import connectImg from "@/assets/connect.jpg";
-import founderAsset from "@/assets/founder-anil-datla.jpg.asset.json";
+import founderImg from "@/assets/founder-anil-datla.jpg";
 
 /* ------------------------------------------------------------------ Hero */
 
@@ -833,7 +833,7 @@ export function Founder() {
       <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <Reveal className="overflow-hidden">
           <img
-            src={founderAsset.url}
+            src={founderImg}
             alt="Anil Datla, Founder & Managing Director"
             loading="lazy"
             width={900}
