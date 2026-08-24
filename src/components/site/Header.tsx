@@ -49,7 +49,7 @@ export function Header() {
         <a href="#home" className="flex min-w-0 items-center" aria-label="AD Nexus Gateway home">
           <img
             src={logo.url}
-            alt="AD Nexus Gateway FZ-LLC"
+            alt="AD Nexus Gateway"
             className={`w-auto transition-all duration-500 ${scrolled ? "h-7" : "h-8"}`}
           />
         </a>

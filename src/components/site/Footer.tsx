@@ -26,7 +26,7 @@ export function Footer() {
             <div className="inline-flex bg-white px-5 py-3">
               <img
                 src={logo.url}
-                alt="AD Nexus Gateway FZ-LLC"
+                alt="AD Nexus Gateway"
                 className="h-11 w-auto"
                 loading="lazy"
               />
@@ -88,7 +88,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-white/10 pt-6 text-xs tracking-wide text-white/45">
-          © 2026 AD Nexus Gateway FZ-LLC. All Rights Reserved.
+          © 2026 AD Nexus Gateway. All Rights Reserved.
         </div>
       </div>
     </footer>
