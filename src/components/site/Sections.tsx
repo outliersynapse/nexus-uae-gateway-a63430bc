@@ -147,7 +147,25 @@ const VERTICALS = [
   },
 ];
 
+const DUBAI_SLIDES = [
+  { src: dubaiRe1, alt: "Luxury Dubai Marina waterfront towers at golden hour" },
+  { src: dubaiRe2, alt: "Luxury Dubai penthouse interior overlooking Downtown Dubai" },
+  { src: dubaiRe3, alt: "Luxury Dubai waterfront villa at blue hour" },
+];
+
 export function Verticals() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(
+      () => setSlide((s) => (s + 1) % DUBAI_SLIDES.length),
+      6000,
+    );
+    return () => window.clearInterval(id);
+  }, []);
+
+  const v = VERTICALS[0];
+
   return (
     <section id="services" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -162,8 +180,71 @@ export function Verticals() {
           }
         />
 
-        <div className="mt-16 grid gap-px border border-border bg-border md:grid-cols-3">
-          {VERTICALS.map((v, i) => (
+        <Reveal
+          as="article"
+          className="group mt-16 grid border border-border bg-background lg:grid-cols-2"
+        >
+          <div className="relative h-64 overflow-hidden sm:h-80 lg:h-auto lg:min-h-[520px]">
+            {DUBAI_SLIDES.map((s, i) => (
+              <img
+                key={s.src}
+                src={s.src}
+                alt={s.alt}
+                loading="lazy"
+                width={1600}
+                height={1100}
+                className={`absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-[2000ms] ease-out ${
+                  i === slide ? "scale-105 opacity-100" : "scale-100 opacity-0"
+                }`}
+              />
+            ))}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/40 to-transparent" />
+            <div className="pointer-events-none absolute bottom-5 left-5 flex gap-2">
+              {DUBAI_SLIDES.map((s, i) => (
+                <span
+                  key={s.src}
+                  className={`h-px w-8 transition-colors duration-500 ${
+                    i === slide ? "bg-gold" : "bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col p-8 lg:p-14">
+            <span className="font-serif text-2xl text-gold">{v.num}</span>
+            <h3 className="mt-3 text-2xl text-primary lg:text-3xl">{v.title}</h3>
+            <span className="gold-rule mt-5" />
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              {v.body}
+            </p>
+            <ul className="mt-7 grid gap-x-8 gap-y-2 text-[0.83rem] text-muted-foreground sm:grid-cols-2">
+              {v.items.map((it) => (
+                <li key={it} className="flex gap-3">
+                  <span className="mt-2 h-px w-3 shrink-0 bg-gold" />
+                  {it}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={v.cta.href}
+              className="link-underline mt-9 inline-block self-start text-[0.7rem] uppercase tracking-[0.2em] text-primary"
+            >
+              {v.cta.label}
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+export function VerticalsSecondary() {
+  return (
+    <section className="border-t border-border bg-background pb-20 lg:pb-28">
+      <div className="mx-auto max-w-7xl px-5 pt-20 sm:px-8 lg:pt-28">
+        <div className="grid gap-px border border-border bg-border md:grid-cols-2">
+          {VERTICALS.slice(1).map((v, i) => (
             <Reveal
               key={v.num}
               delay={i * 120}
@@ -177,7 +258,7 @@ export function Verticals() {
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className="h-44 w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                  className="h-52 w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
               </div>
               <span className="font-serif text-2xl text-gold">{v.num}</span>
@@ -186,7 +267,7 @@ export function Verticals() {
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 {v.body}
               </p>
-              <ul className="mt-6 space-y-2 text-[0.83rem] text-muted-foreground">
+              <ul className="mt-6 grid gap-x-8 gap-y-2 text-[0.83rem] text-muted-foreground sm:grid-cols-2">
                 {v.items.map((it) => (
                   <li key={it} className="flex gap-3">
                     <span className="mt-2 h-px w-3 shrink-0 bg-gold" />
@@ -207,6 +288,7 @@ export function Verticals() {
     </section>
   );
 }
+
 
 /* ------------------------------------------------------------------ About */
 
