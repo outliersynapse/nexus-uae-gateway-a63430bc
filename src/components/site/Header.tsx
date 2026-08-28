@@ -50,7 +50,7 @@ export function Header() {
           <img
             src={logo}
             alt="AD Nexus Gateway"
-            className={`w-auto transition-all duration-500 ${scrolled ? "h-7" : "h-8"}`}
+            className={`w-auto transition-all duration-500 ${scrolled ? "h-9" : "h-10"}`}
           />
         </a>
 
