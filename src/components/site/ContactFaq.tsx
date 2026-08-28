@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { submitEnquiry } from "@/lib/contact.functions";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const SERVICES = [
@@ -12,26 +13,33 @@ const SERVICES = [
 const FIELD =
   "mt-2 w-full border border-border bg-background px-4 py-3 text-sm text-primary outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-gold";
 
-export function Contact() {
-  const [sent, setSent] = useState(false);
+type Status = "idle" | "sending" | "success" | "error";
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+export function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const body = [
-      `Name: ${data.get("name")}`,
-      `Company: ${data.get("company")}`,
-      `Email: ${data.get("email")}`,
-      `Phone / WhatsApp: ${data.get("phone")}`,
-      `Country: ${data.get("country")}`,
-      `Service Required: ${data.get("service")}`,
-      "",
-      `${data.get("requirement")}`,
-    ].join("\n");
-    window.location.href = `mailto:anil@adnexusgateway.com?subject=${encodeURIComponent(
-      "Enquiry — AD Nexus Gateway",
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+    try {
+      await submitEnquiry({
+        data: {
+          name: String(data.get("name") ?? ""),
+          company: String(data.get("company") ?? "") || undefined,
+          email: String(data.get("email") ?? ""),
+          phone: String(data.get("phone") ?? "") || undefined,
+          country: String(data.get("country") ?? "") || undefined,
+          service: String(data.get("service") ?? "") || undefined,
+          requirement: String(data.get("requirement") ?? ""),
+        },
+      });
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -132,14 +140,21 @@ export function Contact() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="w-full border border-primary bg-primary px-8 py-4 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy-deep sm:w-auto"
+                disabled={status === "sending"}
+                className="w-full border border-primary bg-primary px-8 py-4 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
-                Submit Enquiry
+                {status === "sending" ? "Sending…" : "Submit Enquiry"}
               </button>
-              {sent ? (
+              {status === "success" ? (
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Thank you — your email client has opened with your enquiry ready to
-                  send.
+                  Thank you — your enquiry has been sent successfully. We'll get
+                  back to you shortly.
+                </p>
+              ) : null}
+              {status === "error" ? (
+                <p className="mt-4 text-sm text-red-600">
+                  Sorry — your enquiry could not be sent. Please try again or
+                  email us directly at anil@adnexusgateway.com.
                 </p>
               ) : null}
             </div>
