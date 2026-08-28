@@ -140,14 +140,21 @@ export function Contact() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="w-full border border-primary bg-primary px-8 py-4 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy-deep sm:w-auto"
+                disabled={status === "sending"}
+                className="w-full border border-primary bg-primary px-8 py-4 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
-                Submit Enquiry
+                {status === "sending" ? "Sending…" : "Submit Enquiry"}
               </button>
-              {sent ? (
+              {status === "success" ? (
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Thank you — your email client has opened with your enquiry ready to
-                  send.
+                  Thank you — your enquiry has been sent successfully. We'll get
+                  back to you shortly.
+                </p>
+              ) : null}
+              {status === "error" ? (
+                <p className="mt-4 text-sm text-red-600">
+                  Sorry — your enquiry could not be sent. Please try again or
+                  email us directly at anil@adnexusgateway.com.
                 </p>
               ) : null}
             </div>
