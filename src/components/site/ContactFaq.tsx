@@ -78,12 +78,9 @@ export function Contact() {
             </div>
             <div>
               <p className="eyebrow">Email</p>
-              <a
-                href="mailto:anil@adnexusgateway.com"
-                className="link-underline mt-3 inline-block text-primary"
-              >
+              <p className="mt-3 inline-block text-primary">
                 anil@adnexusgateway.com
-              </a>
+              </p>
             </div>
             <div>
               <p className="eyebrow">Website</p>
