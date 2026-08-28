@@ -74,20 +74,31 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       throw new Error("Email environment variables are not configured");
     }
 
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: data.email,
-        subject: `New Enquiry — ${data.name} (${data.service || "General"})`,
-        html: buildHtml(data, siteUrl),
-      }),
+    const payload = JSON.stringify({
+      from,
+      to: [to],
+      reply_to: data.email,
+      subject: `New Enquiry — ${data.name} (${data.service || "General"})`,
+      html: buildHtml(data, siteUrl),
     });
+
+    const send = () =>
+      fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: payload,
+      });
+
+    // Resend rate-limits bursts (429) and can return transient 5xx —
+    // retry a couple of times with backoff before surfacing an error.
+    let response = await send();
+    for (let attempt = 0; attempt < 2 && (response.status === 429 || response.status >= 500); attempt++) {
+      await new Promise((resolve) => setTimeout(resolve, 1200 * (attempt + 1)));
+      response = await send();
+    }
 
     if (!response.ok) {
       const errorBody = await response.text();
