@@ -106,5 +106,8 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       throw new Error(`Email send failed [${response.status}]`);
     }
 
+    const result = (await response.json()) as { id?: string };
+    console.log(`Resend accepted enquiry email id=${result.id ?? "unknown"} to=${to} from=${from}`);
+
     return { ok: true };
   });
