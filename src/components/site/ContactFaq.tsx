@@ -75,6 +75,7 @@ export function Contact() {
                 <br />
                 P.O Box No.10055, Ras Al Khaimah, UAE (United Arab Emirates)
               </address>
+              <p className="mt-2 text-muted-foreground">Mobile: +971 52 415 1233</p>
             </div>
             <div>
               <p className="eyebrow">Email</p>
