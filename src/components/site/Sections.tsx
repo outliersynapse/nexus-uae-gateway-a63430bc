@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Reveal, SectionHeading } from "./Reveal";
-import heroImg from "@/assets/hero-uae.jpg";
 import heroImg2 from "@/assets/hero-uae-2.jpg";
 import heroImg3 from "@/assets/hero-uae-3.jpg";
 import realEstateImg from "@/assets/real-estate.jpg";
@@ -15,7 +14,6 @@ import founderImg from "@/assets/founder-anil-datla.jpg";
 /* ------------------------------------------------------------------ Hero */
 
 const HERO_SLIDES = [
-  { src: heroImg, alt: "Premium UAE skyline at blue hour" },
   { src: heroImg2, alt: "Luxury Dubai residential towers at blue hour" },
   { src: heroImg3, alt: "Dubai waterfront luxury property skyline at dusk" },
 ];
