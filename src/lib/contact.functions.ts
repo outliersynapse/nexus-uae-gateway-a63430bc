@@ -67,11 +67,19 @@ export const submitEnquiry = createServerFn({ method: "POST" })
   .inputValidator((data) => inputSchema.parse(data))
   .handler(async ({ data }) => {
     const apiKey = process.env["RESEND_API_KEY"];
-    const to = process.env["CONTACT_TO_EMAIL"];
+    const lovableApiKey = process.env["LOVABLE_API_KEY"];
     const from = process.env["CONTACT_FROM_EMAIL"];
     const siteUrl = process.env["SITE_URL"] ?? "";
-    if (!apiKey || !to || !from) {
+    const to = "anil@adnexusgateway.com";
+
+    if (!apiKey || !lovableApiKey || !from) {
       throw new Error("Email environment variables are not configured");
+    }
+
+    const senderDomain = from.match(/[A-Z0-9._%+-]+@([A-Z0-9.-]+\.[A-Z]{2,})/i)?.[1];
+    if (senderDomain?.toLowerCase() !== "adnexusgateway.com") {
+      console.error("Enquiry email rejected: CONTACT_FROM_EMAIL must use the verified adnexusgateway.com domain");
+      throw new Error("Email sender is not configured");
     }
 
     const payload = JSON.stringify({
@@ -82,32 +90,38 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       html: buildHtml(data, siteUrl),
     });
 
-    const send = () =>
-      fetch("https://api.resend.com/emails", {
+    const response = await fetch("https://connector-gateway.lovable.dev/resend/emails", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${lovableApiKey}`,
+          "X-Connection-Api-Key": apiKey,
           "Content-Type": "application/json",
         },
         body: payload,
       });
 
-    // Resend rate-limits bursts (429) and can return transient 5xx —
-    // retry a couple of times with backoff before surfacing an error.
-    let response = await send();
-    for (let attempt = 0; attempt < 2 && (response.status === 429 || response.status >= 500); attempt++) {
-      await new Promise((resolve) => setTimeout(resolve, 1200 * (attempt + 1)));
-      response = await send();
-    }
-
+    const responseBody = await response.text();
     if (!response.ok) {
-      const errorBody = await response.text();
-      console.error(`Resend request failed [${response.status}]: ${errorBody}`);
+      const safeErrorBody = responseBody
+        .replaceAll(apiKey, "[redacted]")
+        .replaceAll(lovableApiKey, "[redacted]");
+      console.error(`Resend request failed [${response.status}]: ${safeErrorBody}`);
       throw new Error(`Email send failed [${response.status}]`);
     }
 
-    const result = (await response.json()) as { id?: string };
-    console.log(`Resend accepted enquiry email id=${result.id ?? "unknown"} to=${to} from=${from}`);
+    let result: { id?: string };
+    try {
+      result = JSON.parse(responseBody) as { id?: string };
+    } catch {
+      console.error("Resend returned a successful response with an unreadable confirmation body");
+      throw new Error("Email send could not be confirmed");
+    }
+    if (!result.id) {
+      console.error("Resend returned a successful response without an email id");
+      throw new Error("Email send could not be confirmed");
+    }
 
-    return { ok: true };
+    console.log(`Resend accepted enquiry email id=${result.id}`);
+
+    return { ok: true, emailId: result.id };
   });
