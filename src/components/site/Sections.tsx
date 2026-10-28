@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Reveal, SectionHeading } from "./Reveal";
 import heroImg2 from "@/assets/hero-uae-2.jpg";
 import heroImg3 from "@/assets/hero-uae-3.jpg";
+import heroImg4 from "@/assets/hero-uae-4.jpg";
 import realEstateImg from "@/assets/real-estate.jpg";
 import dubaiRe1 from "@/assets/dubai-real-estate-1.jpg";
 import dubaiRe2 from "@/assets/dubai-real-estate-2.jpg";
@@ -16,6 +17,7 @@ import founderImg from "@/assets/founder-anil-datla.jpg";
 const HERO_SLIDES = [
   { src: heroImg2, alt: "Luxury Dubai residential towers at blue hour" },
   { src: heroImg3, alt: "Dubai waterfront luxury property skyline at dusk" },
+  { src: heroImg4, alt: "Dubai Marina skyline with highway and towers" },
 ];
 
 export function Hero() {
